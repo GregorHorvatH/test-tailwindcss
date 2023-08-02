@@ -1,7 +1,12 @@
-import { useCallback, useMemo, useState } from 'react';
+import axios from 'axios';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+
 import { Item } from '../components';
+import { TODOS_URL } from '../constants';
 
 export const useTodos = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const [todos, setTodos] = useState<Item[]>([]);
 
   const addTodo = useCallback((item: Item) => {
@@ -20,5 +25,19 @@ export const useTodos = () => {
     todos, addTodo, removeTodo, updateTodo,
   }), [addTodo, removeTodo, todos, updateTodo]);
 
-  return { contextValue };
+  const getTodos = () => {
+    setIsLoading(true);
+    axios.get(TODOS_URL)
+      .then(({ data }) => setTodos(data))
+      .catch(({ message }) => {
+        setError(message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  useEffect(getTodos, []);
+
+  return { contextValue, error, isLoading };
 };

@@ -18,7 +18,8 @@ export const TodoAddForm = () => {
     addTodo({
       id: uuid4(),
       text: data.todoText,
-      isDone: true,
+      checked: false,
+      timestamp: Date.now(),
     });
     reset();
   };
@@ -34,11 +35,14 @@ export const TodoAddForm = () => {
           <input
             className="rounded"
             placeholder="Enter todo... "
-            {...register('todoText', { required: true })}
+            {...register('todoText', {
+              required: { value: true, message: 'this field is required' },
+              maxLength: { value: 50, message: 'maximum length is 50' },
+            })}
           />
-          {errors.todoText && (
+          {errors?.todoText && (
             <span className="absolute top-10 text-red-500">
-              this field is required
+              {errors?.todoText?.message as string || 'error'}
             </span>
           )}
         </div>

@@ -18,9 +18,9 @@ export const Button = ({
 }: ButtonProps) => {
   const classNames = cn({
     'py-2 rounded text-sky-50': true,
-    'bg-red-500 hover:bg-red-600 active:bg-red-400': color === 'error',
-    'bg-sky-500 hover:bg-sky-600 active:bg-sky-400': color === 'primary',
-    'bg-orange-500 hover:bg-orange-600 active:bg-orange-400': color === 'warning',
+    'bg-red-500 hover:bg-red-600 active:bg-red-700': color === 'error',
+    'bg-sky-500 hover:bg-sky-600 active:bg-sky-700': color === 'primary',
+    'bg-orange-500 hover:bg-orange-600 active:bg-orange-700': color === 'warning',
     'px-2': buttonSize === 'xs',
     'px-4': buttonSize === 'sm',
     'px-6': buttonSize === 'md',
