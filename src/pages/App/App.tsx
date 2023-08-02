@@ -1,14 +1,14 @@
 import React from 'react';
 import { TodosPage } from '../Todos';
-import { Title3 } from '../../components';
+import { Title } from '../../components';
 
 export const App = () => {
   return (
     <div className="tailwind-test-app">
-      <Title3>
+      <Title className='text-2xl'>
         <span>Todos</span>
         <span className="font-thin">(tailwind test app)</span>
-      </Title3>
+      </Title>
       <TodosPage />
     </div>
   );

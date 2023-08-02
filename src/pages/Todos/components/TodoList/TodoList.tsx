@@ -8,7 +8,7 @@ export const TodoList = () => {
 
   return (
     <div className="todo-list p-6 flex flex-col gap-y-2">
-      {todos.map((item) => <TodoItem item={item} />)}
+      {todos.map((item) => <TodoItem key={item.id} item={item} />)}
     </div>
   );
 };

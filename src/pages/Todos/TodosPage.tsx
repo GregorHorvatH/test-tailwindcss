@@ -1,22 +1,9 @@
-import { useCallback, useMemo, useState } from 'react';
-
-import { Item, TodoAddForm, TodoList } from './components';
+import { TodoAddForm, TodoList } from './components';
 import { TodosContext } from './context';
+import { useTodos } from './hooks';
 
 export const TodosPage = () => {
-  const [todos, setTodos] = useState<Item[]>([]);
-
-  const addTodo = useCallback((item: Item) => {
-    setTodos(prevItems => [item, ...prevItems]);
-  }, []);
-
-  const removeTodo = useCallback((id: string) => {}, []);
-
-  const updateTodo = useCallback((item: Item) => {}, []);
-
-  const contextValue = useMemo(() => ({
-    todos, addTodo, removeTodo, updateTodo,
-  }), [addTodo, removeTodo, todos, updateTodo]);
+  const { contextValue } = useTodos();
 
   return (
     <TodosContext.Provider value={contextValue}>
