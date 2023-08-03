@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/test-tailwindcss/static/css/main.1adbcb61.css",
+    "main.js": "/test-tailwindcss/static/js/main.133d36d5.js",
+    "static/media/tailwind.png": "/test-tailwindcss/static/media/tailwind.36b2728bf0d14b7b7576.png",
+    "index.html": "/test-tailwindcss/index.html",
+    "main.1adbcb61.css.map": "/test-tailwindcss/static/css/main.1adbcb61.css.map",
+    "main.133d36d5.js.map": "/test-tailwindcss/static/js/main.133d36d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1adbcb61.css",
+    "static/js/main.133d36d5.js"
+  ]
+}
