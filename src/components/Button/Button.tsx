@@ -2,6 +2,8 @@ import { HTMLProps } from 'react';
 import cn from 'classnames';
 import { twMerge } from 'tailwind-merge'
 
+import './Button.css';
+
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   buttonSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
@@ -18,15 +20,9 @@ export const Button = ({
   ...rest
 }: ButtonProps) => {
   const classes = cn({
-    'py-2 rounded text-sky-50': true,
-    'bg-red-500 hover:bg-red-600 active:bg-red-700': color === 'error',
-    'bg-sky-500 hover:bg-sky-600 active:bg-sky-700': color === 'primary',
-    'bg-orange-500 hover:bg-orange-600 active:bg-orange-700': color === 'warning',
-    'px-2': buttonSize === 'xs',
-    'px-4': buttonSize === 'sm',
-    'px-6': buttonSize === 'md',
-    'px-8': buttonSize === 'lg',
-    'px-10': buttonSize === 'xl',
+    'btn': true,
+    [color]: color,
+    [buttonSize]: buttonSize,
   });
 
   return (

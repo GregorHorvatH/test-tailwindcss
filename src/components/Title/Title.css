@@ -1,0 +1,3 @@
+.title {
+  @apply flex items-center text-gray-400 font-bold m-6 gap-x-2;
+}

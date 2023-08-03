@@ -5,6 +5,8 @@ import { FieldValues, useForm } from "react-hook-form";
 import { TodosContext } from '../../context';
 import { Button } from '../../../../components';
 
+import './TodoAddForm.css';
+
 export const TodoAddForm = () => {
   const { addTodo } = useContext(TodosContext);
   const {
@@ -26,14 +28,14 @@ export const TodoAddForm = () => {
 
   return (
     <form
-      className="todo-add-form flex flex-col sm:flex-row gap-x-2 px-6 pb-4 gap-y-2"
+      className="todo-add-form"
       onSubmit={handleSubmit(onSubmit)}
     >
       <label className="flex flex-wrap gap-x-2 items-center">
         <span className="text-gray-500">Todo:</span>
         <div className="flex flex-col flex-1 relative">
           <input
-            className="rounded"
+            className="todo-input"
             placeholder="Enter todo text ... "
             {...register('todoText', {
               required: { value: true, message: 'this field is required' },

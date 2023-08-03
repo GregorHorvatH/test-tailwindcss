@@ -1,0 +1,3 @@
+.tailwind-test-app {
+  @apply h-screen flex flex-col overflow-hidden;
+}

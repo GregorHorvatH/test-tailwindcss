@@ -8,7 +8,7 @@ interface LoaderProps {
 export const Loader = ({ className }: LoaderProps) => (
   <div className={twMerge('loader flex justify-center p-6', className)}>
     <RotatingLines
-      strokeColor="grey"
+      strokeColor="lightblue"
       strokeWidth="5"
       animationDuration="0.75"
       width="96"

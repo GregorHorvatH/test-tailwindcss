@@ -8,7 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#217f31',
+        primary: {
+          500: '#00b8d5',
+          600: '#01a0b9',
+          700: '#018094',
+        },
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],

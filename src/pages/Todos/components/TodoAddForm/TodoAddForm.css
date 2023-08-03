@@ -1,0 +1,7 @@
+.todo-add-form {
+  @apply flex flex-col sm:flex-row gap-x-2 px-6 pb-4 gap-y-2;
+}
+
+.todo-input {
+  @apply rounded focus:border-primary-500 focus:outline-none focus:ring-0 focus:shadow;
+}
