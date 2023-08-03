@@ -6,7 +6,7 @@ import icon from '../../images/tailwind.png';
 
 export const App = () => {
   return (
-    <div className="tailwind-test-app">
+    <div className="tailwind-test-app h-screen flex flex-col overflow-hidden">
       <Title className='text-2xl'>
         <span>Todos</span>
         <img className="h-10" src={icon} alt="tailwind icon" />

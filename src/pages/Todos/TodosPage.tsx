@@ -8,7 +8,7 @@ export const TodosPage = () => {
 
   return (
     <TodosContext.Provider value={contextValue}>
-      <div className="todos-page flex flex-col">
+      <div className="todos-page flex flex-col overflow-hidden">
         <TodoAddForm />
         {isLoading ? <Loader /> : <TodoList />}
       </div>

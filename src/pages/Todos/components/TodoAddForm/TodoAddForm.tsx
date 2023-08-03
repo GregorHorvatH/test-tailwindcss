@@ -26,15 +26,15 @@ export const TodoAddForm = () => {
 
   return (
     <form
-      className="todo-add-form flex gap-x-2 justify-center"
+      className="todo-add-form flex flex-col sm:flex-row gap-x-2 px-6 pb-4 gap-y-2"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <label className="flex gap-x-2 items-center">
-        <span className="text-gray-500">Enter text</span>
-        <div className="flex flex-col relative">
+      <label className="flex flex-wrap gap-x-2 items-center">
+        <span className="text-gray-500">Todo:</span>
+        <div className="flex flex-col flex-1 relative">
           <input
             className="rounded"
-            placeholder="Enter todo... "
+            placeholder="Enter todo text ... "
             {...register('todoText', {
               required: { value: true, message: 'this field is required' },
               maxLength: { value: 50, message: 'maximum length is 50' },
