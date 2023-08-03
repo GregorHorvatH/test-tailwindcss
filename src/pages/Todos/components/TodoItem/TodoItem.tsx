@@ -20,7 +20,10 @@ export const TodoItem = ({ item }: TodoItemProps) => {
   const { removeTodo, updateTodo } = useContext(TodosContext);
 
   const handleToggle = () => {
-    updateTodo(item);
+    updateTodo({
+      ...item,
+      checked: !item.checked,
+    });
   };
 
   const handleRemove = () => {
