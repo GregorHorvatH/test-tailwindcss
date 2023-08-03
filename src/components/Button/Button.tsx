@@ -1,5 +1,6 @@
 import { HTMLProps } from 'react';
 import cn from 'classnames';
+import { twMerge } from 'tailwind-merge'
 
 interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   buttonSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -16,7 +17,7 @@ export const Button = ({
   type = 'button',
   ...rest
 }: ButtonProps) => {
-  const classNames = cn({
+  const classes = cn({
     'py-2 rounded text-sky-50': true,
     'bg-red-500 hover:bg-red-600 active:bg-red-700': color === 'error',
     'bg-sky-500 hover:bg-sky-600 active:bg-sky-700': color === 'primary',
@@ -26,11 +27,10 @@ export const Button = ({
     'px-6': buttonSize === 'md',
     'px-8': buttonSize === 'lg',
     'px-10': buttonSize === 'xl',
-    [className]: !!className,
   });
 
   return (
-    <button className={classNames} type={type} {...rest} >
+    <button className={twMerge(classes, className)} type={type} {...rest} >
       {children}
     </button>
   );

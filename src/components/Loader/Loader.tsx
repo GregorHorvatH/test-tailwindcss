@@ -1,7 +1,12 @@
 import { RotatingLines } from 'react-loader-spinner';
+import { twMerge } from 'tailwind-merge'
 
-export const Loader = () => (
-  <div className="loader flex justify-center p-6">
+interface LoaderProps {
+  className?: string;
+}
+
+export const Loader = ({ className }: LoaderProps) => (
+  <div className={twMerge('loader flex justify-center p-6', className)}>
     <RotatingLines
       strokeColor="grey"
       strokeWidth="5"
